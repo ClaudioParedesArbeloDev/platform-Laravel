@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap");
+:root {
+  --background: #e0e1dd;
+  --surface: #b5d9e0;
+  --text-primary: #0d1b2a;
+  --text-secondary: #1b263b;
+  --primary: #778da9;
+  --primary-variant: #415a77;
+  --secondary: #00b4d8;
+  --secondary-variant: #0096c7;
+  --success: #85BB65;
+  --warning: #FFAA00;
+  --error: #B22222;
+  --card-background: #F5F1ED;
+  --border: #DED6D1;
+  --icon-color: #B28C2F;
+  --toggle-bg: #dbd2b5;
+  --toggle-thumb: #691c7b;
+}
+
+[data-theme=dark] {
+  --background: #1c1f30;
+  --surface: #202334;
+  --text-primary: #e0e1dd;
+  --text-secondary: #BDBDBD;
+  --primary: #292c3e;
+  --primary-variant: #778da9;
+  --secondary: #808080;
+  --secondary-variant: #696969;
+  --success: #32CD32;
+  --warning: #FF8C00;
+  --error: #DC143C;
+  --card-background: #222222;
+  --border: #691c7b;
+  --icon-color: #210d69;
+  --toggle-bg: #333333;
+  --toggle-thumb: #ea90ff;
+}
+
+body {
+  background: var(--card-background);
+}
+
+.adminWrapper {
+  display: grid;
+  color: var(--text-primary);
+  font-family: "Space Grotesk", serif;
+  margin: 50px 40px;
+  grid-template-columns: repeat(4, auto);
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.adminTitle {
+  grid-column: 1/4;
+  justify-self: center;
+}
+
+.adminList {
+  color: var(--text-primary);
+  grid-column: 1;
+  font-family: "Space Grotesk", serif;
+  list-style: none;
+}
+
+.btnAdmin {
+  color: var(--text-primary);
+  text-decoration: none;
+  grid-column: 2;
+  width: 150px;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid var(--text-primary);
+  border-radius: 5px;
+}
+
+.btnAdmin:hover {
+  background: var(--secondary);
+}
+
+.btnAdmin1 {
+  grid-column: 3;
+  text-align: center;
+  color: var(--text-primary);
+  text-decoration: none;
+  width: 150px;
+  padding: 10px;
+  border: 1px solid var(--text-primary);
+  border-radius: 5px;
+}
+
+.btnAdmin1:hover {
+  background: var(--secondary);
+}
+
+.btnAdmin2 {
+  grid-column: 4;
+  text-align: center;
+  color: var(--text-primary);
+  text-decoration: none;
+  width: 150px;
+  padding: 10px;
+  border: 1px solid var(--text-primary);
+  border-radius: 5px;
+}
+
+.btnAdmin2:hover {
+  background: var(--secondary);
+}/*# sourceMappingURL=admin.css.map */

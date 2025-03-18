@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap');
+@import '../../colors.scss';
+
+body{
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    height: 100vh;
+}
+
+
+.sidebarWrapper{
+    display: block;    background: var(--background);
+    width: 250px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--border);
+}
+
+.titleDashboard{
+    color: var(--text-primary);
+    font-family: 'Space Grotesk', sans-serif;
+    text-align: center;
+}
+
+.user{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text-primary);
+}
+
+.avatarSidebar{
+    margin: 20px;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    background: var(--secondary);
+    border-radius: 50%;
+}
+
+
+.lang{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a{
+        img{
+            width: 30px;
+            margin: 10px;
+        }
+    }
+}
+.theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    left: 100px;
+    display: flex;
+    align-items: center;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.toggle {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    background: var(--toggle-bg);
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background 0.4s ease;
+}
+
+.sun{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.1rem;
+    color: var(--icon-color);
+    transition: opacity 0.3s ease;
+}
+
+.moon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.1rem;
+    color: var(--icon-color);
+    transition: opacity 0.3s ease;
+}
+
+.sun {
+    left: 6px;
+    opacity: 1;
+    z-index: 2;
+}
+
+.moon {
+    right: 8px;
+    opacity: 0;
+    z-index: 2;
+}
+
+.toggle::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 24px;
+    height: 24px;
+    background: var(--toggle-thumb);
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+input[type="checkbox"]:checked + .toggle::after {
+    transform: translateX(30px);
+}
+
+input[type="checkbox"]:checked + .toggle .sun {
+    opacity: 0;
+}
+
+input[type="checkbox"]:checked + .toggle .moon {
+    opacity: 1;
+}
+
+.navDashboard{
+    margin: 20px 0;
+    a{
+        display: flex;
+        text-decoration: none;
+        align-items: center;
+        padding: 20px 0 20px 20px;
+        i{
+            text-decoration: none;
+            color: var(--text-primary);
+            padding: 0 10px;
+        }
+        li{
+            color: var(--text-primary);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            list-style: none;
+            letter-spacing: 2px;
+        }
+    }
+    a:hover{
+        background: var(--secondary);
+        
+    }
+}
+
+.logout{
+    margin: 20px 0;
+    a{
+        display: flex;
+        text-decoration: none;
+        color: var(--text-primary);
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 1.1rem;
+        list-style: none;
+        letter-spacing: 2px;
+        align-items: center;
+        padding: 20px 0 20px 20px;
+        i{
+            text-decoration: none;
+            color: var(--text-primary);
+            padding: 0 10px;
+        }
+    }
+    a:hover{
+        background: var(--secondary);
+    }
+}
+
+.sidebarMobile{
+    display: none ;
+}
+
+    
+
+
+@media (max-width: 1250px){
+    .sidebarWrapper{
+        display: none ;
+    }
+
+    .sidebarMobile{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: var(--background);
+        border-right: 2px solid var(--secondary);
+        width: 60px;
+        height: 115vh;
+        transition: 0.3s;
+    
+        #menuDash{
+            color: var(--text-primary);
+            font-size: 1.2em;
+            padding: 10px;
+        }
+
+        .lang{
+            display: none;
+        }
+
+       
+
+        .user{
+            img{
+                width: 50px;
+                height: 50px;
+                object-fit: cover;
+                border-radius: 50%;
+            }
+            pre{
+                display: none;
+            }
+        }
+
+        .navDashboard{
+            a{
+                padding: 20px 0;
+                i{
+                    padding: 0px;
+                }
+                li{
+                    display: none;
+                }
+            }
+        }
+        .logout{
+            a{
+                padding: 0;
+            }
+            
+            p{
+                display: none;
+            }
+        }
+
+        .theme-toggle{
+            left: 0;
+            
+        }
+    }
+
+    .sidebarMobile.show{
+        width: 150px;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        background: var(--background);
+        border-right: 2px solid var(--secondary);
+        height: 115vh;
+        padding-left: 20px;
+
+        .lang{
+            display: block;
+        }
+
+       
+        .user{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            img{
+                width: 50px;
+                border-radius: 50%;
+            }
+            pre{
+                display: block;
+            }
+        }
+
+        .navDashboard{
+            a{
+                padding: 15px 0;
+                i{
+                    padding: 0 10px 0 0;
+                }
+                li{
+                    display: block;
+                    font-size: 0.8em;
+                }
+            }
+        }
+        .logout{
+            a{
+                padding: 0;
+            }
+            
+            p{
+                display: block;
+            }
+        }
+
+        .theme-toggle{
+            left: 0;
+            bottom: 5px;
+        }
+    }
+    
+}

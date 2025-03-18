@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap');
+@import '../colors.scss';
+
+
+.aboutUsWrapper {
+    font-family: 'Montserrat', sans-serif;
+    width: 60%;
+    justify-self: center;
+}
+
+.aboutUsTitle {
+    font-size: 2em;
+    text-align: center;
+    color: var(--text-primary);
+    margin: 60px 0;
+}
+
+.aboutUsContent{
+    color: var(--text-secondary);
+    text-align: justify;
+    font-size: 1.3em;
+    line-height: 30px;
+}
+
+
+@media (max-width: 1250px) {
+    .aboutUsWrapper{
+        width: 90%;
+    }
+    .aboutUsTitle{
+        font-size: 1.2em;
+    }
+    .aboutUsContent{
+        font-size: 1em;
+    }
+}

@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap");
+:root {
+  --background: #e0e1dd;
+  --surface: #b5d9e0;
+  --text-primary: #0d1b2a;
+  --text-secondary: #1b263b;
+  --primary: #778da9;
+  --primary-variant: #415a77;
+  --secondary: #00b4d8;
+  --secondary-variant: #0096c7;
+  --success: #85BB65;
+  --warning: #FFAA00;
+  --error: #B22222;
+  --card-background: #F5F1ED;
+  --border: #DED6D1;
+  --icon-color: #B28C2F;
+  --toggle-bg: #dbd2b5;
+  --toggle-thumb: #691c7b;
+}
+
+[data-theme=dark] {
+  --background: #1c1f30;
+  --surface: #202334;
+  --text-primary: #e0e1dd;
+  --text-secondary: #BDBDBD;
+  --primary: #292c3e;
+  --primary-variant: #778da9;
+  --secondary: #808080;
+  --secondary-variant: #696969;
+  --success: #32CD32;
+  --warning: #FF8C00;
+  --error: #DC143C;
+  --card-background: #222222;
+  --border: #691c7b;
+  --icon-color: #210d69;
+  --toggle-bg: #333333;
+  --toggle-thumb: #ea90ff;
+}
+
+.blogContainer {
+  color: var(--text-primary);
+  font-family: "Space Grotesk", serif;
+  width: 60%;
+  justify-self: center;
+  margin-top: 50px;
+}
+
+.blogCategory {
+  font-size: 0.6em;
+  padding: 10px;
+  color: var(--text-primary);
+  border-radius: 10px;
+  text-transform: uppercase;
+}
+
+.blogTitle {
+  font-size: 2.5em;
+  margin: 20px 0;
+}
+
+.blogImage {
+  width: 40vw;
+  margin: 20px 0;
+}
+
+.blogCreatedAt {
+  text-transform: lowercase;
+}
+
+.blogBody {
+  text-align: justify;
+}
+
+.title {
+  font-family: "Space Grotesk", serif;
+}
+
+.inputComment {
+  display: flex;
+  align-items: center;
+}
+.inputComment img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background: var(--secondary);
+  margin: 10px;
+}
+.inputComment textarea {
+  border: none;
+  border-bottom: 1px solid var(--secondary);
+  background: none;
+  width: 55vw;
+  padding: 10px;
+  margin-right: 10px;
+}
+.inputComment button {
+  border: none;
+  background: var(--secondary);
+  color: var(--text-primary);
+  padding: 10px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+.inputComment button:hover {
+  background: var(--border);
+}
+
+.comments {
+  list-style: none;
+  padding: 0;
+}
+
+.comment {
+  display: flex;
+  width: 900px;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--primary);
+}
+.comment img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background: var(--secondary);
+  margin: 10px;
+}
+.comment .commentBody {
+  width: 700px;
+}
+
+.likeButton {
+  background: none;
+  border: none;
+}
+
+.like {
+  color: var(--error);
+  font-size: 1.4em;
+}
+
+.dislike {
+  font-size: 1.4em;
+}
+
+@media (max-width: 1250px) {
+  .blogContainer {
+    width: 90vw;
+  }
+  .blogContainer img {
+    width: 90vw;
+  }
+  .blogTitle {
+    font-size: 1.2em;
+  }
+  .inputComment {
+    display: flex;
+    align-items: center;
+  }
+  .inputComment img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    background: var(--secondary);
+    margin: 10px;
+  }
+  .inputComment textarea {
+    border: none;
+    border-bottom: 1px solid var(--secondary);
+    background: none;
+    width: 60vw;
+  }
+  .inputComment button {
+    border: none;
+    background: var(--secondary);
+    color: var(--text-primary);
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.3s;
+  }
+  .inputComment button:hover {
+    background: var(--border);
+  }
+  .comments {
+    list-style: none;
+    padding: 0;
+  }
+  .comment {
+    display: flex;
+    width: 90vw;
+    align-items: center;
+    font-size: 0.7em;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--primary);
+  }
+  .comment img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    background: var(--secondary);
+    margin: 10px;
+  }
+  .comment .commentBody {
+    width: 700px;
+  }
+}/*# sourceMappingURL=blog.css.map */

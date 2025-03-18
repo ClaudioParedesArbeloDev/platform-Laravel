@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
+:root {
+  --background: #e0e1dd;
+  --surface: #b5d9e0;
+  --text-primary: #0d1b2a;
+  --text-secondary: #1b263b;
+  --primary: #778da9;
+  --primary-variant: #415a77;
+  --secondary: #00b4d8;
+  --secondary-variant: #0096c7;
+  --success: #85BB65;
+  --warning: #FFAA00;
+  --error: #B22222;
+  --card-background: #F5F1ED;
+  --border: #DED6D1;
+  --icon-color: #B28C2F;
+  --toggle-bg: #dbd2b5;
+  --toggle-thumb: #691c7b;
+}
+
+[data-theme=dark] {
+  --background: #1c1f30;
+  --surface: #202334;
+  --text-primary: #e0e1dd;
+  --text-secondary: #BDBDBD;
+  --primary: #292c3e;
+  --primary-variant: #778da9;
+  --secondary: #808080;
+  --secondary-variant: #696969;
+  --success: #32CD32;
+  --warning: #FF8C00;
+  --error: #DC143C;
+  --card-background: #222222;
+  --border: #691c7b;
+  --icon-color: #210d69;
+  --toggle-bg: #333333;
+  --toggle-thumb: #ea90ff;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: var(--text-primary);
+  justify-content: center;
+  align-items: center;
+  margin-left: 100px;
+}
+.container img {
+  width: 500px;
+  margin: 80px;
+}
+
+.courseDetail {
+  display: flex;
+  flex-direction: column;
+  color: var(--text-primary);
+}
+.courseDetail h3 {
+  font-family: "Roboto Mono", serif;
+  font-weight: 300;
+}
+.courseDetail h1 {
+  font-family: "Source Code Pro", serif;
+}
+.courseDetail p {
+  font-family: "Roboto Mono", serif;
+}
+.courseDetail select {
+  border: none;
+  padding: 10px;
+  background: var(--secondary);
+}
+
+.btnEnroll {
+  margin: 40px 0;
+  text-align: center;
+  background: var(--secondary);
+  font-family: "Roboto Mono", serif;
+  width: 200px;
+  padding: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+@media (max-width: 1250px) {
+  .container {
+    width: 90vw;
+    display: flex;
+    justify-self: center;
+    margin: 0px;
+    justify-content: center;
+    align-items: center;
+  }
+  .container img {
+    display: none;
+  }
+  .courseDetail h3 {
+    text-align: center;
+  }
+}/*# sourceMappingURL=detail.css.map */

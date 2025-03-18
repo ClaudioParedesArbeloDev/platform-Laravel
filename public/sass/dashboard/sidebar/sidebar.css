@@ -1,0 +1,315 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap");
+:root {
+  --background: #e0e1dd;
+  --surface: #b5d9e0;
+  --text-primary: #0d1b2a;
+  --text-secondary: #1b263b;
+  --primary: #778da9;
+  --primary-variant: #415a77;
+  --secondary: #00b4d8;
+  --secondary-variant: #0096c7;
+  --success: #85BB65;
+  --warning: #FFAA00;
+  --error: #B22222;
+  --card-background: #F5F1ED;
+  --border: #DED6D1;
+  --icon-color: #B28C2F;
+  --toggle-bg: #dbd2b5;
+  --toggle-thumb: #691c7b;
+}
+
+[data-theme=dark] {
+  --background: #1c1f30;
+  --surface: #202334;
+  --text-primary: #e0e1dd;
+  --text-secondary: #BDBDBD;
+  --primary: #292c3e;
+  --primary-variant: #778da9;
+  --secondary: #808080;
+  --secondary-variant: #696969;
+  --success: #32CD32;
+  --warning: #FF8C00;
+  --error: #DC143C;
+  --card-background: #222222;
+  --border: #691c7b;
+  --icon-color: #210d69;
+  --toggle-bg: #333333;
+  --toggle-thumb: #ea90ff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  height: 100vh;
+}
+
+.sidebarWrapper {
+  display: block;
+  background: var(--background);
+  width: 250px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--border);
+}
+
+.titleDashboard {
+  color: var(--text-primary);
+  font-family: "Space Grotesk", sans-serif;
+  text-align: center;
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--text-primary);
+}
+
+.avatarSidebar {
+  margin: 20px;
+  width: 100px;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background: var(--secondary);
+  border-radius: 50%;
+}
+
+.lang {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.lang a img {
+  width: 30px;
+  margin: 10px;
+}
+
+.theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  left: 100px;
+  display: flex;
+  align-items: center;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+.toggle {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  background: var(--toggle-bg);
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background 0.4s ease;
+}
+
+.sun {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.1rem;
+  color: var(--icon-color);
+  transition: opacity 0.3s ease;
+}
+
+.moon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.1rem;
+  color: var(--icon-color);
+  transition: opacity 0.3s ease;
+}
+
+.sun {
+  left: 6px;
+  opacity: 1;
+  z-index: 2;
+}
+
+.moon {
+  right: 8px;
+  opacity: 0;
+  z-index: 2;
+}
+
+.toggle::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  background: var(--toggle-thumb);
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+input[type=checkbox]:checked + .toggle::after {
+  transform: translateX(30px);
+}
+
+input[type=checkbox]:checked + .toggle .sun {
+  opacity: 0;
+}
+
+input[type=checkbox]:checked + .toggle .moon {
+  opacity: 1;
+}
+
+.navDashboard {
+  margin: 20px 0;
+}
+.navDashboard a {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  padding: 20px 0 20px 20px;
+}
+.navDashboard a i {
+  text-decoration: none;
+  color: var(--text-primary);
+  padding: 0 10px;
+}
+.navDashboard a li {
+  color: var(--text-primary);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.1rem;
+  list-style: none;
+  letter-spacing: 2px;
+}
+.navDashboard a:hover {
+  background: var(--secondary);
+}
+
+.logout {
+  margin: 20px 0;
+}
+.logout a {
+  display: flex;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.1rem;
+  list-style: none;
+  letter-spacing: 2px;
+  align-items: center;
+  padding: 20px 0 20px 20px;
+}
+.logout a i {
+  text-decoration: none;
+  color: var(--text-primary);
+  padding: 0 10px;
+}
+.logout a:hover {
+  background: var(--secondary);
+}
+
+.sidebarMobile {
+  display: none;
+}
+
+@media (max-width: 1250px) {
+  .sidebarWrapper {
+    display: none;
+  }
+  .sidebarMobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--background);
+    border-right: 2px solid var(--secondary);
+    width: 60px;
+    height: 115vh;
+    transition: 0.3s;
+  }
+  .sidebarMobile #menuDash {
+    color: var(--text-primary);
+    font-size: 1.2em;
+    padding: 10px;
+  }
+  .sidebarMobile .lang {
+    display: none;
+  }
+  .sidebarMobile .user img {
+    width: 50px;
+    height: 50px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 50%;
+  }
+  .sidebarMobile .user pre {
+    display: none;
+  }
+  .sidebarMobile .navDashboard a {
+    padding: 20px 0;
+  }
+  .sidebarMobile .navDashboard a i {
+    padding: 0px;
+  }
+  .sidebarMobile .navDashboard a li {
+    display: none;
+  }
+  .sidebarMobile .logout a {
+    padding: 0;
+  }
+  .sidebarMobile .logout p {
+    display: none;
+  }
+  .sidebarMobile .theme-toggle {
+    left: 0;
+  }
+  .sidebarMobile.show {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    background: var(--background);
+    border-right: 2px solid var(--secondary);
+    height: 115vh;
+    padding-left: 20px;
+  }
+  .sidebarMobile.show .lang {
+    display: block;
+  }
+  .sidebarMobile.show .user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .sidebarMobile.show .user img {
+    width: 50px;
+    border-radius: 50%;
+  }
+  .sidebarMobile.show .user pre {
+    display: block;
+  }
+  .sidebarMobile.show .navDashboard a {
+    padding: 15px 0;
+  }
+  .sidebarMobile.show .navDashboard a i {
+    padding: 0 10px 0 0;
+  }
+  .sidebarMobile.show .navDashboard a li {
+    display: block;
+    font-size: 0.8em;
+  }
+  .sidebarMobile.show .logout a {
+    padding: 0;
+  }
+  .sidebarMobile.show .logout p {
+    display: block;
+  }
+  .sidebarMobile.show .theme-toggle {
+    left: 0;
+    bottom: 5px;
+  }
+}/*# sourceMappingURL=sidebar.css.map */
